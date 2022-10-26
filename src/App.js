@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+
+import logo2 from './imagenes/logolampara.png'
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
@@ -10,7 +11,7 @@ function App() {
 		<div className="App">
 			<NavBar />
 			<ItemListContainer greeting={"BIENVENIDOS A LAMPARAS-DECO"}/>
-			<img src={logo} className="App-logo" alt="logo" />
+			<img src={logo2} className="App-logo" alt="logo" />
 			<Footer/>
 		</div>
 
