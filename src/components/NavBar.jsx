@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CartWidget from './CartWidget';
 import logolampara from '../imagenes/logolampara.png'
 
-const pages = ['Productos', 'Ofertas', 'Nosotros'];
+const pages = [{label:"Productos"}, {label:"Checkout", link:"/Checkout"}, {label:"Contacto",link:"/Contacto"}];
 const settings = ['Perfil', 'Cuenta','Cerrar Sesión'];
 
 function NavBar() {
@@ -42,7 +42,7 @@ function NavBar() {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <div className="">   
-                    <img src={logolampara} className="logo" alt="" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    <img src={logolampara} className="logo App-logo" alt="" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     </div>
                     <Typography
                         variant="h6"
@@ -92,8 +92,10 @@ function NavBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">
+                                    <a href={page.link}>{page.label}</a>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -120,11 +122,11 @@ function NavBar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.label}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                            <a href={page.link}>{page.label}</a>
                             </Button>
                         ))}
                     </Box>
