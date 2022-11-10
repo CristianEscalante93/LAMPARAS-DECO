@@ -9,7 +9,7 @@ const [contador, setContador] = useState(inicial);
         <h3>Cantidad: {contador}</h3>
         <button disabled={contador >= stock} onClick={()=>{setContador(contador + 1)}}>+</button>
         <button disabled={contador<=1} onClick={()=>{setContador(contador - 1)}}>-</button>
-        <button onClick={()=>{onAdd(contador); setContador(inicial)}}>Agregar al carrito</button>
+        <button disabled={stock===0} onClick={()=>{onAdd(contador); setContador(inicial)}}>Agregar al carrito</button>
     </div>;
 
 }

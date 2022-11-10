@@ -13,7 +13,7 @@ export default function TestApi() {
     }, [])
 
     const [pokemon, setPokemon] = useState([])
-    console.log(pokemon)
+    console.log(pokemon )
 
 
 

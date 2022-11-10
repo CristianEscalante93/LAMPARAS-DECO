@@ -14,6 +14,40 @@
     margin: 10px;
 }
 
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.link1 {
+    text-decoration: none;
+    color: black;
+}
+
+/* imagenes card */
+.imgCard {
+    display: inline;
+    width: 30%;
+    height: 40%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-position: center;
+    background-position: center;
+    object-fit: cover;
+}
+.card{
+    max-height: 300px;
+}
+
+
+/* main */
+.containerPrincipal{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
 /* footer */
 .footer {
     display: grid;
