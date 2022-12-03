@@ -3,33 +3,32 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import "../App.css";
+import './Item.css';
 
 export default function Item({item}) {
-  console.log(item.nombre);
 
   return (
 
-      <Card sx={{ maxWidth: 345 }} style={{ border: "2px solid black" , margin:"10px"}} className="card">
+      <Card sx={{ maxWidth: 300 }} style={{ border: "2px solid black" , margin:"10px",borderRadius: "20px"}} className="card sombra">
       <img
         src={item.img}
         alt={item.nombre}
         className="imgCard"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.nombre}
+        <Typography gutterBottom variant="h5" component="div" >
+          <div className="letra">{item.nombre}</div>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="" color="text.secondary" className="precio">
           ${item.precio}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small"><Link to={"/item/" + item.id} className="link1" >Detalles</Link></Button>
+      <CardActions style={{display:"flex", justifyContent:"center"}}>
+        <Button size="small" style={{backgroundColor: "goldenrod"}}><Link to={"/item/" + item.id} className="link1 letra" style={{}} >Detalles</Link></Button>
       </CardActions>
     </Card>
+
   )
 }

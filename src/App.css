@@ -18,17 +18,17 @@
     text-decoration: none;
     color: white;
 }
-
-.link1 {
+.link-nav {
     text-decoration: none;
     color: black;
 }
 
+
+
 /* imagenes card */
 .imgCard {
     display: inline;
-    width: 30%;
-    height: 40%;
+    padding: 5px;
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
@@ -40,50 +40,27 @@
     max-height: 300px;
 }
 
-
+.neon{
+    color: #c237db;
+}
+.sombra {
+    background-color: black;
+    transition: all 0.4s;
+    }
+.sombra:hover {
+        box-shadow: 0 25px 50px -12px #c237db;
+        transform: scale(1.1);
+    }
 /* main */
+
 .containerPrincipal{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    justify-items: center;
 }
 
-/* footer */
-.footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 100px;
-    background-color: black;
-}
 
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer__efecto {
-    display: grid;
-    grid-template-rows: 1fr;
-    text-decoration: none;
-    height: auto;
-    width: auto;
-    color: white;
-    padding: 5px;
-    font-size: 20px;
-    transition: all 0.3s;
-}
-
-.footer__efecto:hover {
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    padding: 5px;
-    transform: scale(1.1);
-}
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
@@ -115,3 +92,4 @@
         transform: rotate(360deg);
     }
 }
+

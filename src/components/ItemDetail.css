@@ -1,0 +1,56 @@
+/* imagenes card */
+.imgCard {
+  display: inline;
+  padding: 5px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center;
+  object-fit: cover;
+}
+
+.letra1{
+  font-family: 'Syne Mono', monospace;
+}
+.boton{
+  background-color: black;
+  border:1px solid black ;
+}
+.linkGold {
+  text-decoration: none;
+  color: goldenrod;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.linkGold:hover{
+  color: black;
+  font-weight: bold;
+}
+
+.card1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card2 {
+  display: flex;
+  justify-content: center;
+}
+
+.sombraW{
+  box-shadow: 0 25px 50px -12px #c237db;
+}
+
+.neon{
+  color: #c237db;
+}
+
+@media screen and (max-width: 650px) {
+.card1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+}

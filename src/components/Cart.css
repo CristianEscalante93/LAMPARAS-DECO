@@ -1,0 +1,60 @@
+/* imagenes card */
+.imgCard {
+  display: inline;
+  padding: 5px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center;
+  object-fit: cover;
+  border-radius: 5px;
+}
+/* letras link */
+.link11 {
+  text-decoration: none;
+  color: goldenrod;
+  transition: all 0.3s;
+}
+.link11:hover{
+  color: black;
+}
+
+.bot{
+  background-color:darkslategray ;
+  transition: all 0.3s;
+  
+}
+.bot:hover{
+  background-color: lightslategray;
+  color: black;
+  padding: 5px;
+  transform: scale(1.1);
+}
+
+.cardCarrito{
+  margin: 15px;
+  background-color: white;
+  min-width: 60%;
+  max-width: 80%;
+}
+.contenedorCart{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.vaciarPagar{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+.vaciar{
+  background-color: gray;
+}
+.linkPago{
+  text-decoration: none;
+  border-color: #c237db;
+  color: #c237db;
+
+}

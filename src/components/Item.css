@@ -1,0 +1,38 @@
+/* imagenes card */
+.imgCard {
+  display: inline;
+  padding: 5px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-position: center;
+  background-position: center;
+  object-fit: cover;
+}
+.card{
+  max-height: 340px;
+  width: 285px;
+}
+.sombra {
+  transition: all 0.1s;
+}
+.sombra:hover {
+  box-shadow: 0 25px 50px -12px #c237db;
+  transform: scale(1.05);
+}
+
+/* letras link */
+.link1 {
+  text-decoration: none;
+  color: black;
+}
+
+/* letra usada en las card */
+.letra{
+  font-family: 'Syne Mono', monospace;
+}
+
+.precio{
+    font-weight: bold;
+    color: gray;
+  }

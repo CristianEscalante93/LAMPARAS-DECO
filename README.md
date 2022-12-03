@@ -1,70 +1,26 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lamparas-DECO
+### Proyecto final React JS
+- Dejo el link donde se hizo el deploy [Lamparas-DECO](https://proyecto-44970.web.app/).
 
-## Available Scripts
+### Aplicacion Web E-commerce
+- Esta app se construyó para un e-commerce dedicado a la venta de lamparas de diseño y decoración.
+- La misma cuenta con una página principal donde se muestran el total de los artículos y pestañas de categorías con sus respectivos artículos. 
+- Tiene una utilización sencila: se elije un producto , lo lleva a los detalles del mismo y si es de su agrado le agrega la cantidad requerida al carrito(la cual no se puede agregar mas de lo que hay en stock actualmente), el cual si esta vacío no se muestra.
+- Las cantidades son controladas con el stock desde la base de datos de firebase para que no superen las mismas en las compras,el stock ya se descuenta una vez agregadas las lámparas al carrito y se vuelven a agregar en caso de cancelar la compra, el carrito persiste porque se encuentra en el LocalStorage.
+- Una vez agregado al carrito puede ir a ver al mismo si los productos y las cantidades estan bien,alli se muestran los precios y se pueden eliminar algunos productos o vaciar el carrito entero(lo borra del LocalStorage tambien), de estar seguro presiona pagar que lo lleva al checkout.
+- En el checkout llena un formulario con las validaciones correspondientes para realizar la compra y le devuelve un ticket con el id del pedido, los productos y el monto, datos que se guardan en la base de datos de firestore.
+- Sin más que agregar espero la app sea de su agrado.
 
-In the project directory, you can run:
+### Librerías y donde se utilizaron
+                    
+Librería | Aplicación
+------------- | -------------
+M.U.I.  | La utilice para el landing, navbar, cards, spiner e iconos.
+Sweetalert2  | Fue usada especialmente en el checkout para los errores de validaciones y la impresion del "ticket" de compra. 
+Firebase  | Fue utilizada como base de datos del proyecto y para hacer el deploy del mismo.
 
-### `npm start`
+**Tabla de contenidos**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[TOC]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

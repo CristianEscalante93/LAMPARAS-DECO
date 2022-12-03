@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../App.css";
+import "./NavBar.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,17 +15,23 @@ import MenuItem from "@mui/material/MenuItem";
 import CartWidget from "./CartWidget";
 import logolampara from "../imagenes/logolampara.png";
 import { Link } from "react-router-dom";
+import { contextGeneral } from "./ContextContainer";
 
 const pages = [
-  { label: "Productos" },
   { label: "Checkout", link: "/Checkout" },
-  { label: "Contacto", link: "/Contacto" },
   { label: "Vintage", link: "/categoria/Vintage" },
   { label: "Moderna", link: "/categoria/Moderna" },
 ];
-const settings = ["Perfil", "Cuenta", "Cerrar Sesión"];
 
 function NavBar() {
+  const {carrito} = React.useContext(contextGeneral);
+
+  const [cant, setCant] = React.useState(0);
+
+  React.useEffect(() => {
+    setCant(carrito.reduce((acc, item) => acc + item.quantity, 0));
+  }, [carrito]);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -59,8 +65,6 @@ function NavBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -71,7 +75,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            LAMPARAS-DECO
+            <Link to="/" className="link">LAMPARAS-DECO</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -106,7 +110,7 @@ function NavBar() {
               {pages.map((page) => (
                 <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link to={page.link} className="link">{page.label}</Link>
+                    <Link to={page.link} className="link-nav">{page.label}</Link>
                   </Typography>
                 </MenuItem>
               ))}
@@ -116,8 +120,6 @@ function NavBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -129,7 +131,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            DECO
+            <Link to="/" className="link">DECO</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -139,39 +141,8 @@ function NavBar() {
             ))}
           </Box>
 
-          <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
-            <CartWidget />
-          </Button>
+          {carrito.length ? <Link to="/Cart" className="link"><CartWidget cant={cant} /></Link> : null}
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Configuraciones">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>

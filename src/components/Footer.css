@@ -1,0 +1,36 @@
+/* footer */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100px;
+  background-color: black;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__efecto {
+  display: grid;
+  grid-template-rows: 1fr;
+  text-decoration: none;
+  height: auto;
+  width: auto;
+  color: white;
+  padding: 5px;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.footer__efecto:hover {
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding: 5px;
+  transform: scale(1.1);
+}

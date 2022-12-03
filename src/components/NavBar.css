@@ -1,0 +1,18 @@
+/* logo navbar */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.logo {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}
+.link-nav {
+  text-decoration: none;
+  color: black;
+}

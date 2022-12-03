@@ -2,34 +2,33 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer";
-import { productosDECO } from "./data.js";
 import ItemList from "./ItemList";
 import "../App.css";
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
 
 
 export default function ItemListContainer({ greeting }) {
   const { idcategoria} = useParams();
-
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    const productosPromise = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(productosDECO);
-      }, 2000);
-    });
-    productosPromise.then((res) => {
-      if (idcategoria) {
-        setProductos(res.filter((item) => item.categoria == idcategoria));
-      } else {
-        setProductos(res);
-      }
+    const db = getFirestore();
+    let productos;
+    if (idcategoria) {
+      productos= query(collection(db,'productos'), where('categoria', '==', idcategoria))
+    } else {
+      productos = collection(db, 'productos')
+    }
+
+    getDocs(productos).then(res=>{
+      const documentos = res.docs.map((elemento) => ({ id: elemento.id, ...elemento.data() }));
+      setProductos(documentos);
     });
   }, [idcategoria]);
 
   return (
-    <div>
-      <ItemList productos={productos} />;
-    </div>
+    <>
+      <ItemList productos={productos} />
+    </>
   );
 }

@@ -1,0 +1,15 @@
+.contador{
+  display: flex;
+  justify-content: space-around;
+}
+.botones{
+  border-radius: 5px;
+  background-color: lightslategray;
+  color:black;
+  transition: all 0.3s;
+}
+.botones:hover{
+  background-color: black;
+  color: #c237db;
+  border-color: #c237db;
+}
