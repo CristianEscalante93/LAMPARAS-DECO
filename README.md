@@ -20,7 +20,3 @@ M.U.I.  | La utilice para el landing, navbar, cards, spiner e iconos.
 Sweetalert2  | Fue usada especialmente en el checkout para los errores de validaciones y la impresion del "ticket" de compra. 
 Firebase  | Fue utilizada como base de datos del proyecto y para hacer el deploy del mismo.
 
-**Tabla de contenidos**
-
-[TOC]
-
